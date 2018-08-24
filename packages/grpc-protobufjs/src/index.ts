@@ -184,3 +184,10 @@ export function loadSync(filename: string, options?: Options): PackageDefinition
   loadedRoot.resolveAll();
   return createPackageDefinition(root, options!);
 }
+
+export function loadJsonSync(json: Protobuf.INamespace, options?: Options): PackageDefinition {
+  options = options || {};
+  const root: Protobuf.Root = Protobuf.Root.fromJSON()
+  root.resolveAll();
+  return createPackageDefinition(root, options!);
+}
